@@ -1,10 +1,12 @@
+@import '../../utils/scss-variables.scss';
+
 .header {
   display: flex;
   justify-content: center;
   padding: 50px 0;
 
   &__tagline {
-    color: #E3E3EB;
+    color: $main-light-grey;
     font-size: 35px;
     cursor: default;
   }

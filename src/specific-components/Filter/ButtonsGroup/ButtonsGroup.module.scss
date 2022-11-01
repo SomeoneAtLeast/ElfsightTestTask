@@ -1,0 +1,13 @@
+.buttonsGroup {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  margin-top: 20px;
+
+  &__buttonsWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+}

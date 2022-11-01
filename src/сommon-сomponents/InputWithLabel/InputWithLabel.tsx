@@ -2,25 +2,28 @@ import { FC } from 'react';
 import styles from './InputWithLabel.module.scss';
 
 interface IInputWithLabel {
-  placeholderText: string;
+  uniqueIdForInput: string;
   labelText: string;
 }
 
 export const InputWithLabel: FC<IInputWithLabel> = ({
-  placeholderText,
+  uniqueIdForInput,
   labelText,
 }) => {
   return (
-    <div className={styles.searchField}>
+    <>
       <input
-        className={styles.input}
-        id="input-with-label"
+        className={styles.inputWithLabel__input}
+        id={uniqueIdForInput}
         type="input"
-        placeholder={placeholderText}
+        placeholder={labelText}
       />
-      <label className={styles.label} htmlFor="input-with-label">
+      <label
+        className={styles.inputWithLabel__label}
+        htmlFor={uniqueIdForInput}
+      >
         {labelText}
       </label>
-    </div>
+    </>
   );
 };

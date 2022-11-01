@@ -5,7 +5,7 @@ export const SearchField = () => {
   return (
     <div className={styles.searchField}>
       <InputWithLabel
-        placeholderText={'Enter character name'}
+        uniqueIdForInput={'SearchField'}
         labelText={'Enter character name'}
       />
     </div>
