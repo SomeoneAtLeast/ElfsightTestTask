@@ -1,0 +1,28 @@
+@import '../../../utils/scss-variables.scss';
+
+.character {
+  width: 280px;
+  list-style: none;
+  background-color: $main-item-background;
+  border-radius: 10px;
+  margin: 10px;
+   
+  &__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__characteristicsList {
+    padding: 5px 20px 15px;
+  }
+
+  &__characteristicsListItem {
+    list-style: none;
+    color: $main-light-grey;
+  }
+
+  &__characteristicsListItemTitle {
+    color: $main-dark-grey;
+    margin-right: 10px;
+  }
+}

@@ -1,4 +1,13 @@
+@import '../src/utils/scss-variables.scss';
+
 .app {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 20px;
-  background-color: #22222A;
+  background-color: $main-app-background;
+}
+
+img {
+  max-width: 100%;
 }
