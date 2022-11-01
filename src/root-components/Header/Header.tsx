@@ -1,5 +1,4 @@
 import styles from './Header.module.scss';
-console.log(styles);
 
 export const Header = () => {
   return (
@@ -8,5 +7,5 @@ export const Header = () => {
         Find a character from Rick and Morty!
       </span>
     </header>
-  )
-}
+  );
+};
