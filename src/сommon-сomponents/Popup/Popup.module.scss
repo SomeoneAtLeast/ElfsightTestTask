@@ -1,0 +1,31 @@
+@import '../../utils/scss-variables.scss';
+
+.popupWrapper {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: $main-popup-screen-background;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 700px;
+  min-height: 350px;
+  border: 2px solid $main-yellow;
+  border-radius: 10px;
+  background-color: $main-item-background;
+  cursor: default;
+}

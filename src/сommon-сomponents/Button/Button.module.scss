@@ -18,5 +18,14 @@
 }
 
 .clear {
-  color: $main-clear-color;
+  color: $main-cancel-color;
+}
+
+.disable {
+  opacity: 0.5;
+  cursor: default;
+
+  &:hover {
+    transform: none;
+  }
 }
