@@ -1,0 +1,12 @@
+@import '../../utils/scss-variables.scss';
+
+.message {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  width: 100%;
+  font-size: 36px;
+  color: $main-yellow;
+  border-radius: 10px;
+  margin-top: 20px;
+}

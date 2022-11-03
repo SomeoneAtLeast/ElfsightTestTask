@@ -17,7 +17,8 @@
       margin-right: 10px;
     }
 
-    &:hover {
+    &:hover,
+    &Active {
       border-color: $main-yellow;
       color: $main-light-grey;
     }

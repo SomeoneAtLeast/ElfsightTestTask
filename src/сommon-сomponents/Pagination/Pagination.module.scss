@@ -1,0 +1,22 @@
+@import '../../utils/scss-variables.scss';
+
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 425px;
+        color: $main-grey;
+    }
+
+    &__currentPage {
+        color: $main-light-grey;
+    }
+
+}

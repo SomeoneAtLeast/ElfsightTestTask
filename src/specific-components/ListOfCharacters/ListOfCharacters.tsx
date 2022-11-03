@@ -1,69 +1,90 @@
+import { FC, useState } from 'react';
+import { CharacterCharacteristicsType } from '../../types/types';
+import Pagination from '../../сommon-сomponents/Pagination';
+import ShowWarning from '../../сommon-сomponents/ShowError';
 import Character from './Character';
+import CharacterPopup from './CharacterPopup';
 import styles from './ListOfCharacters.module.scss';
 
-const model = [
-  {
-    id: 1,
-    name: 'Rick Sanchez',
-    status: 'Alive',
-    species: 'Human',
-    type: '',
-    gender: 'Male',
-    origin: {
-      name: 'Earth (C-137)',
-      url: 'https://rickandmortyapi.com/api/location/1',
-    },
-    location: {
-      name: 'Earth (Replacement Dimension)',
-      url: 'https://rickandmortyapi.com/api/location/20',
-    },
-    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-    episode: [
-      'https://rickandmortyapi.com/api/episode/1',
-      'https://rickandmortyapi.com/api/episode/2',
-      // ...
-    ],
-    url: 'https://rickandmortyapi.com/api/character/1',
-    created: '2017-11-04T18:48:46.250Z',
-  },
-  {
-    id: 183,
-    name: 'Johnny Depp',
-    status: 'Alive',
-    species: 'Human',
-    type: '',
-    gender: 'Male',
-    origin: {
-      name: 'Earth (C-500A)',
-      url: 'https://rickandmortyapi.com/api/location/23',
-    },
-    location: {
-      name: 'Earth (C-500A)',
-      url: 'https://rickandmortyapi.com/api/location/23',
-    },
-    image: 'https://rickandmortyapi.com/api/character/avatar/183.jpeg',
-    episode: ['https://rickandmortyapi.com/api/episode/8'],
-    url: 'https://rickandmortyapi.com/api/character/183',
-    created: '2017-12-29T18:51:29.693Z',
-  },
-];
+interface IListOfCharacters {
+  error: string | null;
+  characters: CharacterCharacteristicsType[];
+  currentPage: number;
+  totalPages: number;
+  setCurrentPage: (page: number) => void;
+}
 
-export const ListOfCharacters = () => {
+export const ListOfCharacters: FC<IListOfCharacters> = ({
+  error,
+  characters,
+  setCurrentPage,
+  currentPage,
+  totalPages,
+}) => {
+  const [isShowPopup, setIsShowPopup] = useState(false);
+  const [dataForCharacterPopup, setDataForCharacterPopup] = useState({
+    image: '',
+    name: '',
+    status: '',
+    gender: '',
+    species: '',
+    type: '',
+    location: '',
+    origin: '',
+  });
+
+  if (error) return <ShowWarning message={error} />;
+
   return (
-    <ul className={styles.listOfCharacters}>
-      {model.map(({ id, image, name, status, species, type, gender }) => {
-        return (
-          <Character
-            key={id}
-            image={image}
-            name={name}
-            status={status}
-            species={species}
-            type={type || 'Unknown'}
-            gender={gender}
-          />
-        );
-      })}
-    </ul>
+    <>
+      <ul className={styles.listOfCharacters}>
+        {characters.map((character) => {
+          const {
+            id,
+            image,
+            name,
+            status,
+            species,
+            type,
+            gender,
+            location,
+            origin,
+          } = character;
+          return (
+            <Character
+              character={character}
+              key={id}
+              setIsShowPopup={() => setIsShowPopup((oldValue) => !oldValue)}
+              setDataForCharacterPopup={() =>
+                setDataForCharacterPopup((oldData) => {
+                  return {
+                    ...oldData,
+                    image,
+                    name,
+                    status,
+                    species,
+                    type: type || 'Unknown',
+                    gender,
+                    location: location?.name ?? 'Unknown',
+                    origin: origin?.name ?? 'Unknown',
+                  };
+                })
+              }
+            />
+          );
+        })}
+      </ul>
+      {isShowPopup && (
+        <CharacterPopup
+          dataForCharacterPopup={dataForCharacterPopup}
+          setIsShowPopup={() => setIsShowPopup((oldValue) => !oldValue)}
+        />
+      )}
+      <Pagination
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
+    </>
   );
 };
