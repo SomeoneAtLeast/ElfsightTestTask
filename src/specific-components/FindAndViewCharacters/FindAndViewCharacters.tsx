@@ -26,7 +26,7 @@ export const FindAndViewCharacters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const debouncedCharacterName = useDebounce(characterName, 200);
+  const debouncedCharacterName = useDebounce(characterName, 300);
 
   const url = useMemo(
     () => createUrl(currentPage, characterName, currentFilters),
