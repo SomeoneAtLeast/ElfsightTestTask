@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ElfsightTestTask/static/css/main.9edf15bf.css",
-    "main.js": "/ElfsightTestTask/static/js/main.d8fd56b8.js",
+    "main.js": "/ElfsightTestTask/static/js/main.80814c66.js",
     "index.html": "/ElfsightTestTask/index.html",
     "static/media/CrossImg.svg": "/ElfsightTestTask/static/media/CrossImg.08233535a9321b39bf5f4a13e34fede0.svg",
     "main.9edf15bf.css.map": "/ElfsightTestTask/static/css/main.9edf15bf.css.map",
-    "main.d8fd56b8.js.map": "/ElfsightTestTask/static/js/main.d8fd56b8.js.map"
+    "main.80814c66.js.map": "/ElfsightTestTask/static/js/main.80814c66.js.map"
   },
   "entrypoints": [
     "static/css/main.9edf15bf.css",
-    "static/js/main.d8fd56b8.js"
+    "static/js/main.80814c66.js"
   ]
 }
