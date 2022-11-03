@@ -7,6 +7,7 @@ import InputWithLabel from '../../сommon-сomponents/InputWithLabel';
 import { FC, useCallback, useEffect, useState } from 'react';
 import SearchField from '../SearchField';
 import { MouseButtonOrKeyboardEventType } from '../../types/types';
+import { useDebounce } from '../../hooks/useDebounce';
 
 interface IFilter {
   setCharacterName: (name: string) => void;
@@ -58,9 +59,11 @@ export const Filter: FC<IFilter> = ({
     [status, gender, species, type]
   );
 
+  const debouncedCharacterName = useDebounce(characterName, 300);
+
   useEffect(() => {
     onApplyFilters(status, gender, species, type);
-  }, [characterName]);
+  }, [debouncedCharacterName]);
 
   useEffect(() => {
     window.addEventListener('keydown', onApplyFiltersByEnter);

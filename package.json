@@ -1,6 +1,6 @@
 {
-  "homepage": "http://someoneatleast.github.io/elfsight-test-task",
   "name": "elfsight-test-task",
+  "homepage": "http://SomeoneAtLeast.github.io/ElfsightTestTask",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
