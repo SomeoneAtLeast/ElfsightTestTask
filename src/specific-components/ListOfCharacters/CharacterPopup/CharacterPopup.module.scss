@@ -1,0 +1,28 @@
+@import '../../../utils/scss-variables.scss';
+
+.characterPopup {
+  &__img {
+    border-radius: 10px;
+  }
+
+  &__characteristicsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px solid $main-blue;
+    border-radius: 10px;
+    padding: 30px 30px 30px 60px;
+    margin: 30px 0 30px 30px;
+    flex-grow: 1;
+  }
+
+  &__listItem {
+    list-style: none;
+    color: $main-light-grey;
+  }
+
+  &__listItemTitle {
+    color: $main-grey;
+    margin-right: 10px;
+  }
+}

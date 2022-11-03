@@ -1,0 +1,14 @@
+@import '../../utils/scss-variables.scss';
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  width: 100%;
+
+  &__tagline {
+    color: $main-light-grey;
+    font-size: 35px;
+    cursor: default;
+  }
+}

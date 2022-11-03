@@ -1,0 +1,26 @@
+@import '../../../../utils/scss-variables.scss';
+
+.filterItem {
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    padding: 10px;
+    background-color: $main-item-background;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &:hover,
+    &Active {
+      border-color: $main-yellow;
+      color: $main-light-grey;
+    }
+  }
+}

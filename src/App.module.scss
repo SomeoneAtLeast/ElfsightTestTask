@@ -1,0 +1,14 @@
+@import '../src/utils/scss-variables.scss';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100%;
+  background-color: $main-app-background;
+}
+
+img {
+  max-width: 100%;
+}

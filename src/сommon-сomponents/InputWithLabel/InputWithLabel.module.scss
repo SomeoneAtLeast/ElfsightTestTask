@@ -1,0 +1,53 @@
+@import '../../utils/scss-variables.scss';
+
+.inputWithLabel {
+  &__label {
+    position: absolute;
+    top: -5%;
+    display: block;
+    transition: 0.2s;
+    color: $main-dark-grey;
+    font-size: 0.8em;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $main-grey;
+    outline: 0;
+    font-size: 1em;
+    font-weight: 500;
+    color: $main-light-grey;
+    padding: 7px 5px;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .inputWithLabel__label {
+      font-size: 1em;
+      cursor: text;
+      top: 30%;
+    }
+
+    &:focus {
+      ~ .inputWithLabel__label  {
+        position: absolute;
+        top: -5%;
+        display: block;
+        transition: 0.2s;
+        font-size: 0.8em;
+        color: $main-grey;   
+      }
+      
+      padding-bottom: 6px;  
+      border-width: 3px;
+      border-image: linear-gradient(to right, $main-blue, $main-yellow);
+      border-image-slice: 1;
+    }
+  }
+}
