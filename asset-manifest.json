@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/elfsight-test-task/static/css/main.9edf15bf.css",
+    "main.js": "/elfsight-test-task/static/js/main.a8ae990d.js",
+    "index.html": "/elfsight-test-task/index.html",
+    "static/media/CrossImg.svg": "/elfsight-test-task/static/media/CrossImg.08233535a9321b39bf5f4a13e34fede0.svg",
+    "main.9edf15bf.css.map": "/elfsight-test-task/static/css/main.9edf15bf.css.map",
+    "main.a8ae990d.js.map": "/elfsight-test-task/static/js/main.a8ae990d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9edf15bf.css",
+    "static/js/main.a8ae990d.js"
+  ]
+}
