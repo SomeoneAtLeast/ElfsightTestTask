@@ -4,7 +4,7 @@ import styles from './Filter.module.scss';
 import FilterGroup from './FiltersGroup';
 import FilterTextField from './FilterTextField';
 import InputWithLabel from '../../сommon-сomponents/InputWithLabel';
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import SearchField from '../SearchField';
 import { MouseButtonOrKeyboardEventType } from '../../types/types';
 import { useDebounce } from '../../hooks/useDebounce';
@@ -50,15 +50,6 @@ export const Filter: FC<IFilter> = ({
     setGender((oldGender) => (oldGender !== newGender ? newGender : ''));
   };
 
-  const onApplyFiltersByEnter = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
-        onApplyFilters(status, gender, species, type, e);
-      }
-    },
-    [status, gender, species, type]
-  );
-
   const debouncedCharacterName = useDebounce(characterName, 300);
 
   useEffect(() => {
@@ -66,6 +57,12 @@ export const Filter: FC<IFilter> = ({
   }, [debouncedCharacterName]);
 
   useEffect(() => {
+    const onApplyFiltersByEnter = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        onApplyFilters(status, gender, species, type, e);
+      }
+    };
+
     window.addEventListener('keydown', onApplyFiltersByEnter);
 
     return () => {
